@@ -911,7 +911,7 @@ class RelationshipEditor {
     // sort recordings by order in tracklist to avoid having the dialog jump everywhere
     const recOrder = MB.getSourceEntityInstance().mediums.flatMap(
       // tracks on mediums 1-10 loaded by default
-      m => m.tracks
+      m => m.tracks ?? []
     ).concat(
       // tracks on unfolded mediums
       Array.from(MB.relationshipEditor.state.loadedTracks.keys()).sort().flatMap(
