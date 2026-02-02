@@ -214,6 +214,8 @@ class Server {
         'Bashkir': 'ba',
         'Basque': 'eu',
         'Belarusian': 'be',
+        'Belarusian Taraskievica orthography': 'be_tarask',
+        'Bhojpuri': 'bh',
         'Bosnian': 'bs',
         'Breton': 'br',
         'Bulgarian': 'bg',
@@ -281,9 +283,9 @@ class Server {
         'Marathi': 'mr',
         'Mongolian': 'mn',
         'Nepali': 'ne',
+        'Norwegian': 'no',
         'Norwegian Bokmål': 'nb',
         'Norwegian Nynorsk': 'nn',
-        'Norwegian': 'no',
         'Occitan': 'oc',
         'Persian': 'fa',
         'Polish': 'pl',
@@ -307,8 +309,8 @@ class Server {
         'Southern Kurdish': 'sdh',
         'Southern Sami': 'sma',
         'Spanish': 'es',
-        'Sundanese Latin': 'su_Latn',
         'Sundanese': 'su',
+        'Sundanese Latin': 'su_Latn',
         'Swahili': 'sw',
         'Swedish': 'sv',
         'Tajik': 'tg',
@@ -911,7 +913,7 @@ class RelationshipEditor {
     // sort recordings by order in tracklist to avoid having the dialog jump everywhere
     const recOrder = MB.relationshipEditor.state.entity.mediums.flatMap(
       // tracks on mediums 1-10 loaded by default
-      m => m.tracks
+      m => m.tracks ?? []
     ).concat(
       // tracks on unfolded mediums
       Array.from(MB.relationshipEditor.state.loadedTracks.keys()).sort().flatMap(

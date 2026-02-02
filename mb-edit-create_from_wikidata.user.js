@@ -26,6 +26,10 @@
 // @include      http*://*musicbrainz.org/work/create*
 // @include      http*://*musicbrainz.org/work/*/edit
 // @exclude      http*://*musicbrainz.org/work/*/alias/*/edit
+// @include      http*://*musicbrainz.org/series/create*
+// @include      http*://*musicbrainz.org/series/*/edit
+// @exclude      http*://*musicbrainz.org/series/*/alias/*/edit
+// @exclude      http*://*musicbrainz.org/series/*/credit/*/edit
 // @grant        GM_xmlhttpRequest
 // @connect      wikipedia.org
 // @connect      isni.org
@@ -64,6 +68,7 @@ class WikiDataHelpers {
             mbidArtist: 'P434',
             mbidArea: 'P982',
             mbidPlace: 'P1004',
+            mbidSeries: 'P1407',
             members: 'P527',
             student: 'P802',
             teacher: 'P1066',
@@ -114,6 +119,19 @@ class WikiDataHelpers {
             idVimeo: 'P4015',
             idPatreon: 'P4175',
             idAnghami: 'P10885',
+            idImage: 'P18',
+            //series
+            idFeed: 'P1019',
+            idApple: 'P5842',
+            idHeart: 'P7324',
+            idListen: 'P10213',
+            idNPR: 'P5840',
+            idPlayer: 'P9010',
+            //idPocket: 'P9006',
+            idPIndex: 'P11740',
+            idPodchaser: 'P7998',
+            idSpotifyShow: 'P5916',
+            presenter: 'P371',
             // missing: Tumblr (P3943), Bandcamp (P3283)
         };
         this.urls = {
@@ -164,6 +182,18 @@ class WikiDataHelpers {
             idVimeo: 'https://vimeo.com/',
             idPatreon: 'https://www.patreon.com/',
             idAnghami: 'https://play.anghami.com/artist/',
+            idImage: 'https://commons.wikimedia.org/wiki/File:',
+            // series
+            idFeed: '',
+            idApple: 'https://podcasts.apple.com/us/podcast/',
+            idHeart: 'https://www.iheart.com/podcast/',
+            idListen: 'https://www.listennotes.com/podcasts/_-',
+            idNPR: 'https://www.npr.org/podcasts/',
+            idPlayer: 'https://player.fm/series/',
+            //idPocket: 'https://pca.st/',
+            idPIndex: 'https://podcastindex.org/podcast/',
+            idPodchaser: 'https://www.podchaser.com/podcasts/',
+            idSpotifyShow: 'https://open.spotify.com/show/'
         };
     }
 
@@ -321,6 +351,7 @@ for (const [key, value] of Object.entries(FIELD_NAMES)) {
         FIELD_NAMES[key.replace('artist', 'place')] = value;
         FIELD_NAMES[key.replace('artist', 'work')] = value;
         FIELD_NAMES[key.replace('artist', 'label')] = value;
+        FIELD_NAMES[key.replace('artist', 'series')] = value;
     }
 }
 
@@ -593,6 +624,19 @@ function _fillFormFromWikidata(entity, entityType) {
         }
     }
 
+    for (const role of ['presenter']) {
+        if (libWD.existField(entity, role)) {
+            libWD.request(libWD.fieldValue(entity, role).id, data => {
+                const name = data.labels[lang].value;
+                $('#newFields').append(
+                    $('<dt>', {'text': `${role} suggestion:`})
+                ).append(
+                    $('<dd>', {'text': name}).css('color', 'orange')
+                );
+            });
+        }
+    }
+
     for (const role of ['student', 'teacher']) {
         if (libWD.existField(entity, role)) {
             libWD.request(libWD.fieldValue(entity, role).id, data => {
@@ -609,15 +653,13 @@ function _fillFormFromWikidata(entity, entityType) {
 
 function fillFormFromWikidata(wikiId) {
     const entityType = document.URL.split('/')[3];
+    const entityMBID = 'mbid' + entityType.charAt(0).toUpperCase() + entityType.slice(1)
     libWD.request(wikiId, entity => {
         if (
             document.URL.split('/')[4] == 'create' &&
-            (libWD.existField(entity, 'mbidArtist') ||
-                libWD.existField(entity, 'mbidPlace'))
+            (libWD.existField(entity, entityMBID))
         ) {
-            const mbid = libWD.existField(entity, 'mbidArtist')
-                ? libWD.fieldValue(entity, 'mbidArtist')
-                : libWD.fieldValue(entity, 'mbidPlace');
+            const mbid = libWD.fieldValue(entity, entityMBID);
             // eslint-disable-next-line no-alert
             if (window.confirm(
                     'An entity already exists linked to this wikidata id, ' +
