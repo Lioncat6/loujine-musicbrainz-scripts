@@ -13,7 +13,7 @@
 // ==/UserScript==
 
 // github wiki
-const wikiUrl = 'https://github.com/loujine/musicbrainz-scripts/wiki';
+const wikiUrl = 'https://github.com/Lioncat6/loujine-musicbrainz-scripts/wiki';
 
 // from musicbrainz-server/root/static/scripts/tests/typeInfo.js
 class Server {

@@ -5,14 +5,14 @@
 // @namespace    mbz-loujine
 // @author       loujine
 // @version      2023.3.9
-// @downloadURL  https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-edit-replace_rec_artist_from_release_page.user.js
-// @updateURL    https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-edit-replace_rec_artist_from_release_page.user.js
-// @supportURL   https://github.com/loujine/musicbrainz-scripts
-// @icon         https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/icon.png
+// @downloadURL  https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-edit-replace_rec_artist_from_release_page.user.js
+// @updateURL    https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-edit-replace_rec_artist_from_release_page.user.js
+// @supportURL   https://github.com/Lioncat6/loujine-musicbrainz-scripts
+// @icon         https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/icon.png
 // @description  musicbrainz.org: Replace associated recording artist from a Release page
 // @compatible   firefox+tampermonkey
 // @license      MIT
-// @require      https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mbz-loujine-common.js
+// @require      https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mbz-loujine-common.js
 // @include      http*://*musicbrainz.org/release/*
 // @exclude      http*://*musicbrainz.org/release/add
 // @exclude      http*://*musicbrainz.org/release/*/edit

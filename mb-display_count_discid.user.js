@@ -4,10 +4,10 @@
 // @namespace    mbz-loujine
 // @author       loujine
 // @version      2020.9.15
-// @downloadURL  https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-display_count_discid.user.js
-// @updateURL    https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-display_count_discid.user.js
-// @supportURL   https://github.com/loujine/musicbrainz-scripts
-// @icon         https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/icon.png
+// @downloadURL  https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-display_count_discid.user.js
+// @updateURL    https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-display_count_discid.user.js
+// @supportURL   https://github.com/Lioncat6/loujine-musicbrainz-scripts
+// @icon         https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/icon.png
 // @description  musicbrainz.org: Display discid count on main release pages
 // @compatible   firefox+tampermonkey
 // @license      MIT

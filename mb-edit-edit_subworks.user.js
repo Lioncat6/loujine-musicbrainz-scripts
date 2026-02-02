@@ -5,14 +5,14 @@
 // @namespace    mbz-loujine
 // @author       loujine
 // @version      2024.11.25
-// @downloadURL  https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-edit-edit_subworks.user.js
-// @updateURL    https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-edit-edit_subworks.user.js
-// @supportURL   https://github.com/loujine/musicbrainz-scripts
-// @icon         https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/icon.png
+// @downloadURL  https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-edit-edit_subworks.user.js
+// @updateURL    https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-edit-edit_subworks.user.js
+// @supportURL   https://github.com/Lioncat6/loujine-musicbrainz-scripts
+// @icon         https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/icon.png
 // @description  musicbrainz.org edit: Replace subwork titles/disambiguations/attributes in Work edit page
 // @compatible   firefox+tampermonkey
 // @license      MIT
-// @require      https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mbz-loujine-common.js
+// @require      https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mbz-loujine-common.js
 // @include      http*://*musicbrainz.org/work/*/edit
 // @exclude      http*://*musicbrainz.org/work/*/alias/*/edit
 // @grant        none

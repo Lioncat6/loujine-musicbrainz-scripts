@@ -5,14 +5,14 @@
 // @namespace    mbz-loujine
 // @author       loujine
 // @version      2021.11.6
-// @downloadURL  https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-display_sortable_table.user.js
-// @updateURL    https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-display_sortable_table.user.js
-// @supportURL   https://github.com/loujine/musicbrainz-scripts
-// @icon         https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/icon.png
+// @downloadURL  https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-display_sortable_table.user.js
+// @updateURL    https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-display_sortable_table.user.js
+// @supportURL   https://github.com/Lioncat6/loujine-musicbrainz-scripts
+// @icon         https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/icon.png
 // @description  musicbrainz.org: Make table columns sortable
 // @compatible   firefox+tampermonkey
 // @license      MIT
-// @require      https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mbz-loujine-common.js
+// @require      https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mbz-loujine-common.js
 // @include      http*://*musicbrainz.org/work/*
 // @exclude      http*://*musicbrainz.org/work/create
 // @exclude      http*://*musicbrainz.org/work/*/*

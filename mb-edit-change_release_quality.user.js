@@ -5,14 +5,14 @@
 // @namespace    mbz-loujine
 // @author       loujine
 // @version      2023.3.10
-// @downloadURL  https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-edit-change_release_quality.user.js
-// @updateURL    https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mb-edit-change_release_quality.user.js
-// @supportURL   https://github.com/loujine/musicbrainz-scripts
-// @icon         https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/icon.png
+// @downloadURL  https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-edit-change_release_quality.user.js
+// @updateURL    https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mb-edit-change_release_quality.user.js
+// @supportURL   https://github.com/Lioncat6/loujine-musicbrainz-scripts
+// @icon         https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/icon.png
 // @description  musicbrainz.org: Change release quality
 // @compatible   firefox+tampermonkey
 // @license      MIT
-// @require      https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/mbz-loujine-common.js
+// @require      https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/mbz-loujine-common.js
 // @match        *://*.musicbrainz.org/release/*
 // @grant        none
 // @run-at       document-end

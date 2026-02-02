@@ -6,8 +6,8 @@
 // @version      2020.9.12.1
 // @downloadURL  https://raw.githubusercontent.com/murdos/musicbrainz-userscripts/master/naxos_library3_importer.user.js
 // @updateURL    https://raw.githubusercontent.com/murdos/musicbrainz-userscripts/master/naxos_library3_importer.user.js
-// @supportURL   https://github.com/loujine/musicbrainz-scripts
-// @icon         https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/icon.png
+// @supportURL   https://github.com/Lioncat6/loujine-musicbrainz-scripts
+// @icon         https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/icon.png
 // @description  Add a button to import Naxos Music Library 3 releases to MusicBrainz
 // @compatible   firefox+tampermonkey
 // @license      MIT

@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/loujine/musicbrainz-scripts.git"
+        "url": "git+https://github.com/Lioncat6/loujine-musicbrainz-scripts.git"
     },
     "keywords": [
         "musicbrainz",
@@ -19,9 +19,9 @@
     "author": "loujine <loujine@protonmail.com>",
     "license": "SEE LICENSE IN individual userscripts",
     "bugs": {
-        "url": "https://github.com/loujine/musicbrainz-scripts/issues"
+        "url": "https://github.com/Lioncat6/loujine-musicbrainz-scripts/issues"
     },
-    "homepage": "https://github.com/loujine/musicbrainz-scripts#readme",
+    "homepage": "https://github.com/Lioncat6/loujine-musicbrainz-scripts#readme",
     "devDependencies": {
         "eslint": "^8.35.0",
         "eslint-config-prettier": "^8.6.0",

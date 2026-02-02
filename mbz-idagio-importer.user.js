@@ -5,8 +5,8 @@
 // @namespace    mbz-loujine
 // @author       loujine
 // @version      2020.11.16
-// @supportURL   https://github.com/loujine/musicbrainz-scripts
-// @icon         https://raw.githubusercontent.com/loujine/musicbrainz-scripts/master/icon.png
+// @supportURL   https://github.com/Lioncat6/loujine-musicbrainz-scripts
+// @icon         https://raw.githubusercontent.com/Lioncat6/loujine-musicbrainz-scripts/master/icon.png
 // @description  Add a button to import Idagio releases to MusicBrainz
 // @compatible   firefox+tampermonkey
 // @license      MIT
