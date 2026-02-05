@@ -185,7 +185,7 @@ class WikiDataHelpers {
      */
     _fillArea(data, place, nodeId, lang) {
         const entityArea = data.entities[place];
-        const input = document.getElementById(`id-edit-artist.${nodeId}.name`);
+        const input = document.getElementById(`id-edit-artist.${nodeId}`);
         if (!entityArea || !input) { // no wikidata data
             return;
         }
@@ -207,8 +207,7 @@ class WikiDataHelpers {
             return;
         }
         if (this.existField(entityArea, 'mbidArea')) {
-            input.value = this.fieldValue(entityArea, 'mbidArea');
-            input.dispatchEvent(new Event('input'));
+            setInputValue(input, this.fieldValue(entityArea, 'mbidArea'));
             $('#area-bubble').remove();
         } else {
             input.value = area;
@@ -313,7 +312,7 @@ const FIELD_NAMES = {
     'id-edit-artist.period.end_date.day': 'Death day',
     'begin_area': 'Born in',
     'end_area': 'Died in',
-    'area': 'Area',
+    'area.name': 'Area',
 };
 
 for (const [key, value] of Object.entries(FIELD_NAMES)) {
@@ -337,8 +336,7 @@ function setValue(nodeId, value, callback) {
     const printableValue = node.options ? node.options[value].text : value;
     if (!node.value.trim()) {
         // field was empty
-        node.value = value;
-        node.dispatchEvent(new Event('change'));
+        setInputValue(node, value);
         $('#newFields').append(
             $('<dd>',
               {'text': `Added "${printableValue}"`}).css('color', 'green')
@@ -369,8 +367,7 @@ function fillISNI(isni) {
         }
     }
     if (existing_isni.length === 0) {
-        (Object.getOwnPropertyDescriptor(Object.getPrototypeOf(isni_fields[0]), 'value').set).call(isni_fields[0], isni);
-        isni_fields[0].dispatchEvent(new Event('input', {bubbles: true}));
+        setInputValue(isni_fields[0], isni);
         $('#newFields').append(
             $('<dt>', {'text': 'New ISNI code added:'})
         ).append(
@@ -405,6 +402,13 @@ function _existingDomains() {
 }
 
 
+function setInputValue(element, value) {
+    const prototype = Object.getPrototypeOf(element);
+    const prototypeValueSetter = Object.getOwnPropertyDescriptor(prototype, 'value').set;
+    prototypeValueSetter.call(element, value);
+    element.dispatchEvent(new Event('input', {'bubbles': true}));
+}
+
 function _fillExternalLinks(url) {
 
     /* React16 adapter
@@ -413,20 +417,9 @@ function _fillExternalLinks(url) {
      * React considers DOM events as duplicate of synthetic events
      */
 
-    function _setNativeValue(element, value) {
-        const valueSetter = Object.getOwnPropertyDescriptor(element, 'value').set;
-        const prototype = Object.getPrototypeOf(element);
-        const prototypeValueSetter = Object.getOwnPropertyDescriptor(prototype, 'value').set;
-        if (valueSetter && valueSetter !== prototypeValueSetter) {
-            prototypeValueSetter.call(element, value);
-        } else {
-            valueSetter.call(element, value);
-        }
-    }
     const fields = document.querySelectorAll('#external-links-editor input[type="url"]');
     const input = fields[fields.length - 1];
-    _setNativeValue(input, url);
-    input.dispatchEvent(new Event('input', {'bubbles': true}));
+    setInputValue(input, url);
     $('#newFields').append(
         $('<dt>', {'text': 'New external link added:'})
     ).append(
@@ -534,7 +527,7 @@ function _fillFormFromWikidata(entity, entityType) {
         libWD.existField(entity, 'country')
     ) {
         field = libWD.existField(entity, 'citizen') ? 'citizen' : 'country';
-        libWD.fillArea(entity, field, 'area', lang);
+        libWD.fillArea(entity, field, 'area.name', lang);
     }
 
     // ISNI
